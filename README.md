@@ -40,3 +40,11 @@ CREATE TABLE "public"."yourtablename" (
 To load the .csv into Postgres, run the following from the command line:
 
         python load_csv.py
+
+You should see some console output about the load:
+
+```
+INFO:root:Read 10000 rows from data0.csv
+INFO:root:Removed 42 duplicate ids from data
+INFO:root:Inserted 9958 rows to database
+```
