@@ -9,7 +9,27 @@ This is script is for reference/proof of concept and is not production-ready. At
 
 ## Setup
 
+### Postgres
+
 1. Make sure you have access to a Postgres database and credentials that can create tables and insert records.
+2. Create the following table in your Postgres database:
+
+```sql
+CREATE TABLE "public"."yourtablename" (
+    "id" character(36),
+    "datecreated" date,
+    "username" char(50),
+    "first" char(25),
+    "last" char(25),
+    "email" varchar(50),
+    "bio" text,
+    "lang" char(2),
+    PRIMARY KEY ("id")
+);
+```
+
+### Python
+
 2. Create a Python virtual environment and activate it.
 3. Clone this repo and `cd` into the `data_loading` folder.
 4. Install the required Python libraries: `pip install -r requirements.txt`.

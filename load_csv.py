@@ -27,8 +27,11 @@ def load_csv(file_location):
     logging.info('Read {} rows from {}'.format(len(data), file_location))
     data = clean_data(data)
 
-    # bulk insert data to table (drops and re-creates table first)
-    data.to_sql(target_table, connection, if_exists='replace', index=False)
+    # make this script re-runnable by first deleting existing records from db
+    sql = 'delete from {}'.format(target_table)
+    engine.execute(sql)
+    # bulk insert dataframe contents
+    data.to_sql(target_table, connection, if_exists='append', index=False)
 
     # check rowcount of the target table
     # TODO: raise error if db rowcount doesn't match number of dataframe rows
