@@ -14,3 +14,9 @@ This is script is for reference/proof of concept and is not production-ready. At
 3. Clone this repo and `cd` into the `data_loading` folder.
 4. Install the required Python libraries: `pip install -r requirements.txt`.
 5. Rename (or copy) `example_db.cfg` to `db.cfg` and update the information with your postgres hostname, dbname, credentials, and the name of the target table you want load.
+
+## Loading the Data
+
+To load the .csv into Postgres, run the following from the command line:
+
+        python load_csv.py
