@@ -1,3 +1,6 @@
+# db config file
+db.cfg
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
